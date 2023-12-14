@@ -1,0 +1,75 @@
+<!-- views/home.handlebars -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Actualités</title>
+
+  <!-- Adding some styling for a welcoming look -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f8f9fa; /* Light background color */
+      text-align: center;
+    }
+
+    h1 {
+      color: #007bff; /* Blue primary color */
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #fff;
+      margin: 20px 0; /* Increased margin for better separation */
+      padding: 20px;
+      border-radius: 10px; /* Rounded corners for a softer look */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #343a40; /* Dark text color for titles */
+    }
+
+    p {
+      color: #6c757d; /* Slightly muted color for descriptions */
+    }
+
+    small {
+      color: #868e96; /* Lighter color for publication date */
+    }
+  </style>
+</head>
+<body>
+  <!-- Centering the content on the page -->
+  <div style="max-width: 600px; margin: 0 auto;">
+
+    <!-- Welcoming heading for the page -->
+    <h1>Bienvenue sur notre Portail d'Actualités</h1>
+
+    <!-- Creating an unordered list to display the news items -->
+    <ul>
+      <!-- Using Handlebars each block to iterate over the 'actualites' array, which contains news items -->
+      {{#each actualites}}
+        <!-- Displaying each news item's title, description, and publication date -->
+        <li>
+          <h2>{{titre}}</h2>
+          <p>{{description}}</p>
+          <small>{{date_publication}}</small>
+        </li>
+      {{/each}}
+    </ul>
+    <!-- End of the unordered list -->
+
+  </div>
+  <!-- End of centered content -->
+</body>
+</html>
